@@ -5,7 +5,7 @@ prowlarr() {
   local new_version="$(curl -sSL "${prowlarr_url}" | jq '.[0].version' -r)"
 
   if [ "${new_version}" ]; then
-    sed -i "s/PROWLARR_VERSION=.*/PROWLARR_VERSION=${new_version}/" prowlarr/Dockerfile
+    sed -i "s/PROWLARR_VERSION=.*/PROWLARR_VERSION=${new_version}/" Dockerfile
   fi
 
   if output=$(git status --porcelain) && [ -z "$output" ]; then
