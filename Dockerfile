@@ -1,7 +1,7 @@
 # Build
 FROM debian:12.7-slim as builder
 
-ARG PROWLARR_VERSION=1.34.1.5021
+ARG PROWLARR_VERSION=1.35.1.5034
 
 RUN set -eux; \
   apt-get update; \
