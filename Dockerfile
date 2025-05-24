@@ -1,5 +1,5 @@
 # Build
-FROM debian:12.7-slim as builder
+FROM debian:12.11-slim as builder
 
 ARG PROWLARR_VERSION=1.35.1.5034
 
@@ -16,7 +16,7 @@ RUN set -eux; \
   | tar xzf - -C /app/prowlarr --strip-components=1; \
   rm -rf /app/prowlarr/Prowlarr.Update
 
-FROM debian:12.7-slim
+FROM debian:12.11-slim
 COPY --from=builder --chown=docker:docker /app/prowlarr /app
 
 # Install binaries
